@@ -66,6 +66,7 @@ const ProjectDashboard: React.FC = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
               <div className="xl:col-span-2">
                 <h2 className="text-2xl font-bold mb-4">{currentProject.name}</h2>
+                <p className='text-lg font-bold mb-4'>{currentProject.description}</p>
                 <button 
                     onClick={() => { setEditingTask(null); setIsTaskModalOpen(true); }} 
                     className="mb-4 px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-700">

@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useState, useContext, type ReactNode, useCallback, useEffect } from 'react';
+import  { createContext, useState, useContext, type ReactNode, useCallback, useEffect } from 'react';
 import * as api from '../services/api';
 import toast from 'react-hot-toast';
 import type { IProject } from '../types';

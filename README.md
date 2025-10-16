@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# Project & Task Management UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a MERN stack project management application. It is a single-page application (SPA) built with React and TypeScript, designed to provide a rich user interface for interacting with the backend API.
 
-Currently, two official plugins are available:
+The application features full CRUD (Create, Read, Update, Delete) functionality for managing projects and tasks, a drag-and-drop Kanban board, and a dedicated panel for interacting with the Gemini AI assistant.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+-   **Modern UI**: Clean and responsive interface built with Tailwind CSS.
+-   **React & TypeScript**: A robust and type-safe codebase.
+-   **Full CRUD Functionality**: Create, read, update, and delete projects and tasks through intuitive modals and UI controls.
+-   **Kanban Board**: A visual drag-and-drop board to manage task status.
+-   **State Management**: Uses React Context for clean, centralized state management.
+-   **AI Integration**: A dedicated UI panel to interact with the backend's Gemini AI features for project summaries and Q&A.
+-   **User-Friendly Notifications**: Provides clear feedback to the user via `react-hot-toast` notifications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+-   **Framework**: React.js
+-   **Language**: TypeScript
+-   **Styling**: Tailwind CSS
+-   **State Management**: React Context API
+-   **API Communication**: Axios
+-   **Notifications**: `react-hot-toast`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local Installation and Setup Guide
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Follow these steps to get the frontend application running on your local machine.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-   [Node.js](https://nodejs.org/) (v18.x or later recommended)
+-   [Yarn](https://yarnpkg.com/) (or `npm`)
+-   The **backend server must be running** for the frontend to fetch data. Please follow the backend's README to set it up first.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Step 1: Clone the Repository
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+If you haven't already, clone the project repository. This guide assumes you are in the `frontend` directory.
+
+git clone [https://github.com/priyanshu-rathore/task-master-pro.git]
+cd task-master-pro
+
+
+### Step 2: Install Dependencies
+
+Install all the necessary project dependencies using Yarn or npm.
+
+Using Yarn
+yarn install
+
+Or using npm
+npm install
+
+
+### Step 3: Configure Environment Variable (Optional)
+
+The frontend is configured to connect to the backend API at `http://localhost:5000/api`. If your backend is running on a different port or URL, you can create a `.env` file in the `frontend` root directory to override this.
+
+frontend/.env
+REACT_APP_API_URL=http://localhost:5000/api
+
+
+If you don't create this file, the application will default to the correct URL for the local backend setup.
+
+### Step 4: Run the Development Server
+
+Start the React development server.
+
+yarn start
+
+
+This will automatically open the application in your default web browser, usually at [**http://localhost:3000**](http://localhost:3000).
+
+The application will now be running, connected to your local backend server. You can start creating projects, adding tasks, and interacting with the AI assistant.
+
+### Available Scripts
+
+-   `yarn start`: Starts the application in development mode.
+-   `yarn build`: Creates a production-ready build of the application in the `build` folder.
+-   `yarn test`: Runs the test suite (if any tests are configured).
